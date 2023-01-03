@@ -1,0 +1,1 @@
+// This js file will create the fs writing and reading functionality for the notes.//
