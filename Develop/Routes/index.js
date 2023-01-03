@@ -1,14 +1,14 @@
 const express = require('express');
 
-const newNotes = require('./newNotes');
-const savedNotes = require('./savedNotes');
+const notesRouter = require('../routes/notesRouter');
+// const savedNotes = require('./routes/savedNotes');
 
 const app = express();
 
 
+app.use('/notes', notesRouter);
+// app.use('/savedNotes', savedNotes);
 
 
 
-
-
-module.exports = api;
+module.exports = app;

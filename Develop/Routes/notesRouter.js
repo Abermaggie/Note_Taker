@@ -5,33 +5,27 @@ const noteid = require('../helpers/noteid');
 
 router.get('/', (req, res) => {
     console.info(`${req.method} request received for a note`);
-
-    readFromFile('.db/db.json').then((data) => res.json(JSON.parse(data)));
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
 router.post('/', (req, res) => {
     console.info(`${req.method} request received to submit a note`);
 
-    const { title, text} = req.body;
+    const { title, text, note_id} = req.body;
 
-    if (title && text) {
+    if (req.body) {
         const newNote = {
             title,
             text,
-            note_id: uuid(),
+            note_id: noteid(),
         };
 
-        readAndAppend(newNote, '.db/db.json');
+        readAndAppend(newNote, './db/db.json');
 
-        const response = {
-            status: 'success',
-            body: newNote,
-        };
-
-        res.json(response);
+        res.json('Note added successfully');
     } else {
-        res.json('Error in posting new note');
+        res.error('Error in posting new note');
     }
 });
 
-module.exports = newNotes;
+module.exports = router;
