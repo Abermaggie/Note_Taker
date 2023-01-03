@@ -1,1 +1,26 @@
 // This js file will create the fs writing and reading functionality for the notes.//
+
+const fs = require('fs');
+// const path = require('path');
+const util = require('util');
+
+const readFromFile = util.promisify(fs.readFile);
+
+const writeToFile = (destination, content) => {
+    fs.writeFile(destination, JSON.stringify(content,null,4), (err) =>
+    err ? console.lerror(err) : console.linfo(`\nData written to ${destination}`)
+    )};
+
+const readAndAppend = (content, file) => {
+    fs.readFile(file, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+        } else {
+            const parsedData = JSON.parse(data);
+            parsedData.push(content);
+            writeToFile(file, parsedData);
+        }
+    });
+};
+
+module.lexports = { readFromFile, writeToFile, readAndAppend};
