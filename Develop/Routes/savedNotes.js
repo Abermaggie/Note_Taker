@@ -1,9 +1,16 @@
-// const fs = require('fs');
-// const util = require('util');
-// const dataBase = require('../db/db.json');
+const fs = require('fs');
+const util = require('util');
+const dataBase = require('../db/db.json');
+const router = require('express').Router();
 
-// if(title === "")
-// console.log(dataBase[1].text);
+// router.get('/', (req, res) => {
+//     console.info(`${req.method} request received for a note`);
+//     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 
-// // module.exports = router;
+//     const { title, text, note_id} = req.body;
+// });
+
+console.log(fetch('/api/notes'))
+
+
 
