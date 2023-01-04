@@ -1,7 +1,7 @@
 const express = require('express');
 
 const notesRouter = require('../routes/notesRouter');
-// const savedNotes = require('./routes/savedNotes');
+// const savedNotes = require('../routes/savedNotes');
 
 const app = express();
 

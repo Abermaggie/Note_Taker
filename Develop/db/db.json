@@ -1,8 +1,12 @@
-
 [
     {
-        "title":"Test Title",
-        "text":"Test text",
+        "title": "Test Title",
+        "text": "Test text",
         "note_id": "note id"
+    },
+    {
+        "title": "First priority",
+        "text": "Maggie needs a bath",
+        "note_id": "0542"
     }
 ]
