@@ -52,7 +52,6 @@ const deleteNote = (id) =>
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
-
   if (activeNote.id) {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
@@ -182,4 +181,65 @@ if (window.location.pathname === '/notes') {
 
 getAndRenderNotes();
 
-console.log(noteListItems);
+class Takenotes {
+  constructor(title) {
+    this.title = title;
+  }
+
+    loadDB() {
+      const response = awaith fetch('/api/notes');
+      const data = await response.json();
+      let noteArr = data.length;
+      for (var i= 0; i < noteArr; i++) {
+        if(title === notes[i].title) {
+          return 
+          noteTitle.replace(data[i].title),
+          noteText.replace(data[i].text);
+        } else{
+          return "error"
+        }
+      }
+    };
+  };
+
+
+
+  // async function loadDB() {
+  //   const response = await fetch('/api/notes');
+  //   const data = await response.json();
+  //   let noteArr = data.length;
+  //   for (var i = 0; i< noteArr; i++) {
+  //     if (clickEv === notes[i].title) {
+  //       return {
+  //           const newNoteTitle = noteTitle.replace('',notes[i].title)
+
+  //     } else {
+  //       return "error"
+  //   console.log(data[0].title);
+  // }
+
+  // loadDB();
+
+// const pullByClick = () => {
+//   activenote
+//   new Takenotes(`${noteTitle}`) {
+//   this.title = title;
+// }
+// }
+
+// console.log(activeNote);
+
+// let spanElement;
+// spanElement = document.getElementsByClassName('list-item-title')[1].innerText;
+
+// const noteItem1 = []
+
+// const addArray = () => {
+// if (noteLength != 0) {
+//   if(noteLength-1 > noteItem1.length) {
+//     noteItem1.push(noteItem1[noteItem1.length]+1);
+//   } else {
+
+//   }
+// }}
+// const noteLength = document.body.children[1].children[0].children[0].children[0].children[0].children.length;
