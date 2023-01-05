@@ -18,5 +18,30 @@
         "title": "Wash the Dog",
         "text": "Shampoo and rinse",
         "note_id": "38fb"
+    },
+    {
+        "title": "Pressure Wash the House",
+        "text": "Jeremy do this.",
+        "note_id": "a46c"
+    },
+    {
+        "title": "Take out the trash",
+        "text": "put in a new bag",
+        "note_id": "c151"
+    },
+    {
+        "title": "Wash the dishes",
+        "text": "Maggie wash the dishes",
+        "note_id": "c97a"
+    },
+    {
+        "title": "Brush the dogs",
+        "text": "Use tined brush",
+        "note_id": "0930"
+    },
+    {
+        "title": "Finish Homework",
+        "text": "Almost done",
+        "note_id": "e10e"
     }
 ]

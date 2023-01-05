@@ -3,6 +3,9 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
+let clickable;
+let noteDash = document.getElementById('note-title');
+let noteWrite = document.getElementById('note-textarea');
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
@@ -10,6 +13,7 @@ if (window.location.pathname === '/notes') {
   saveNoteBtn = document.querySelector('.save-note');
   newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
+  clickable = document.querySelectorAll('.list-group-item');
 }
 
 // Show an element
@@ -83,7 +87,6 @@ const handleNoteDelete = (e) => {
 
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
-
   if (activeNote.id === noteId) {
     activeNote = {};
   }
@@ -114,6 +117,8 @@ const handleRenderSaveBtn = () => {
     show(saveNoteBtn);
   }
 };
+
+
 
 // Render the list of note titles
 const renderNoteList = async (notes) => {
@@ -153,6 +158,8 @@ const renderNoteList = async (notes) => {
     return liEl;
   };
 
+
+
   if (jsonNotes.length === 0) {
     noteListItems.push(createLi('No saved Notes', false));
   }
@@ -176,39 +183,35 @@ if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
-  noteText.addEventListener('keyup', handleRenderSaveBtn);
+  noteText.addEventListener('keyup', handleRenderSaveBtn);;
 }
 
+// clickable.addEventListener('click', handleID)
 getAndRenderNotes();
 
-// class Takenotes {
-//   constructor(title, text) {
-//     this.title = title;
-//     this.text= text;
-//   }
+// const handleID = (e) => {
+//   e.preventDefault();
+//   activeNote = JSON.parse(e.target.ownerElement.getAttribute('.innerText'));
+//   renderActiveNote();
+// }
+// clickable.addEventListener('click', handleID)
 
 
 async function loadDB(title) {
       const response = await fetch('/api/notes');
       const data = await response.json();
       console.log(data);
-      // let noteArr = data.length;
       console.log("Maggie");
       for (var i= 0; i < data.length; i++) {
         if(title === data[i].title) {
-          return console.log(data[i].text)
+          return noteDash.value = data[i].title, noteWrite.value= data[i].text;
       }
+      // noteDash.value = data[i].title;
+      // noteWrite.value= data[i].text;
     }}
-    //   for (var i= 0; i < data.length; i++) {
-    //     if(title === data[i].title) {
-    //       return console.log(data[i].text);
-    //       // return data[i].title, data[i].text
-    //     } else {
-    //       return "error"
-    //     }
-    //   }console.log(text);
-    // }
-loadDB("Clean House");
+loadDB("");
+
+
 
 // let emp = new Takenotes("Clean House", "yo yo yo");
 // console.log(emp.text);
