@@ -34,6 +34,14 @@ const readAndAppend = (content, file) => {
             writeToFile(file, parsedData);
         }
     });
+
 };
+const deleteFile = (id, file) => {
+    fs.unlink(file, (err) => {
+        
+    })
+}
+
+
 
 module.exports = { readFromFile, writeToFile, readAndAppend};

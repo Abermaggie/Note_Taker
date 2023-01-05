@@ -28,4 +28,9 @@ router.post('/', (req, res) => {
     }
 });
 
+
+router.delete('/:note_id', (req,res) => {
+    const deleteNote = (note_id) => users.findIndex(u => u.id === parseInt(userId)
+})
+
 module.exports = router;
