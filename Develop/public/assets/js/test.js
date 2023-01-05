@@ -186,13 +186,7 @@ if (window.location.pathname === '/notes') {
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
-// Get all notes, remove the note with the given id, write the filtered notes
-// const removeNote = (id) => {
-//   // Get all notes, remove the note with the given id, write the filtered notes
-//   return this.getNotes()
-//     .then((notes) => notes.filter((note) => note.id !== id))
-//     .then((filteredNotes) => this.write(filteredNotes));
-// }
+
 
 getAndRenderNotes();
 
@@ -210,75 +204,6 @@ async function loadDB(innerText) {
       return noteDash.value = data[i].title, noteWrite.value= data[i].text;
     }
 }};
-  // const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
-  // // console.log(noteId);
-  // const newNote = {
-  //   title: noteTitle.value,
-  //   text: noteText.value,
-  // };
-  // saveNote(newNote).then(() => {
-  //   getAndRenderNotes();
-  //   renderActiveNote();
-  // });
-
-
-// const handleClick = (e) => {
-//   // Prevents the click listener for the list from being called when the button inside of it is clicked
-//   e.stopPropagation();
-
-//   const note = e.target;
-//   console.log(note);
-//   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
-//   console.log(note);
-//   if (activeNote.id === noteId) {
-//     activeNote = {};
-//   }
-//   };
-
-// const target = (e) => {
-//   // Prevents the click listener for the list from being called when the button inside of it is clicked
-//   // e.stopPropagation();
-
-//   const note = e.target;
-//   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
-//   console.log(noteId);
-// }
-
-// target();
-// const getData = () => getNotes().then(response);
-// getData();
-
-// const handleClick = (newEl) => {
-// }
-// let getTitle;
-// let getCo;
-// getCo = document.getElementById('list-group-item').data-note;
-// getTitle = document.querySelectorAll('data-note');
-// console.log(getCo);
-
-// const handleNoteView = (e) => {
-//   e.preventDefault();
-//   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
-//   renderActiveNote();
-// };
-
-
-// clickable.addEventListener('click', console.log("hey there"))
-// let innerText = clickable.attributes[2].textContent;
-// console.log(innerText);
-
-// console.log(newEl.innerHTML);
-
-// async function loadDB(title) {
-//       const response = await fetch('/api/notes');
-//       const data = await response.json();
-//       console.log(data);
-//       console.log("Maggie");
-//       for (var i= 0; i < data.length; i++) {
-//         if(title === data[i].title) {
-//           return noteDash.value = data[i].title, noteWrite.value= data[i].text;
-//         }
-//     }}
-// loadDB("Clean House");
+  
 
 

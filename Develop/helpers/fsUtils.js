@@ -47,16 +47,7 @@ const readAndDelete = (id, file) => {
             writeToFile(file, parsedData);
         }
     });
-      }
-    // fs.readFile(file, 'utf8', (err, data) => {
-    //     if (err) {
-    //         console.error(err);
-    //     } else {
-    //         // const parsedData = JSON.parse(data);
-    //         // console.log(parsedData);
-            
-    //     }
-
+}
 
 
 module.exports = { readFromFile, writeToFile, readAndAppend, readAndDelete};
