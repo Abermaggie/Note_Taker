@@ -1,10 +1,5 @@
 [
     {
-        "title": "Clean House",
-        "text": "Maggie needs to vacuum and sweep floors",
-        "note_id": "123"
-    },
-    {
         "title": "sfsf",
         "text": "sfsf\n",
         "note_id": "40cf"
@@ -58,5 +53,10 @@
         "title": "",
         "text": "",
         "note_id": "7e7c"
+    },
+    {
+        "title": "Finish Eating",
+        "text": "Okay",
+        "note_id": "18f4"
     }
 ]

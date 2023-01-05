@@ -86,9 +86,7 @@ const handleNoteDelete = (e) => {
   e.stopPropagation();
 
   const note = e.target;
-  console.log(note);
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).note_id;
-  console.log(noteId);
   if (activeNote.id === noteId) {
     activeNote = {};
   }
@@ -188,7 +186,13 @@ if (window.location.pathname === '/notes') {
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
-
+// Get all notes, remove the note with the given id, write the filtered notes
+// const removeNote = (id) => {
+//   // Get all notes, remove the note with the given id, write the filtered notes
+//   return this.getNotes()
+//     .then((notes) => notes.filter((note) => note.id !== id))
+//     .then((filteredNotes) => this.write(filteredNotes));
+// }
 
 getAndRenderNotes();
 

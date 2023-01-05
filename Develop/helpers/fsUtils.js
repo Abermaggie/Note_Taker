@@ -36,12 +36,27 @@ const readAndAppend = (content, file) => {
     });
 
 };
-const deleteFile = (id, file) => {
-    fs.unlink(file, (err) => {
-        
-    })
-}
+const readAndDelete = (id, file) => {
+    fs.readFile(file, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+        } else {
+            const parsedData = JSON.parse(data);
+            const index = parsedData.findIndex(x => x.note_id === id);
+            parsedData.splice(index, 1);
+            writeToFile(file, parsedData);
+        }
+    });
+      }
+    // fs.readFile(file, 'utf8', (err, data) => {
+    //     if (err) {
+    //         console.error(err);
+    //     } else {
+    //         // const parsedData = JSON.parse(data);
+    //         // console.log(parsedData);
+            
+    //     }
 
 
 
-module.exports = { readFromFile, writeToFile, readAndAppend};
+module.exports = { readFromFile, writeToFile, readAndAppend, readAndDelete};
