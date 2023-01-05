@@ -181,28 +181,37 @@ if (window.location.pathname === '/notes') {
 
 getAndRenderNotes();
 
-class Takenotes {
-  constructor(title) {
-    this.title = title;
-  }
+// class Takenotes {
+//   constructor(title, text) {
+//     this.title = title;
+//     this.text= text;
+//   }
 
-    loadDB() {
-      const response = awaith fetch('/api/notes');
+
+async function loadDB(title) {
+      const response = await fetch('/api/notes');
       const data = await response.json();
-      let noteArr = data.length;
-      for (var i= 0; i < noteArr; i++) {
-        if(title === notes[i].title) {
-          return 
-          noteTitle.replace(data[i].title),
-          noteText.replace(data[i].text);
-        } else{
-          return "error"
-        }
+      console.log(data);
+      // let noteArr = data.length;
+      console.log("Maggie");
+      for (var i= 0; i < data.length; i++) {
+        if(title === data[i].title) {
+          return console.log(data[i].text)
       }
-    };
-  };
+    }}
+    //   for (var i= 0; i < data.length; i++) {
+    //     if(title === data[i].title) {
+    //       return console.log(data[i].text);
+    //       // return data[i].title, data[i].text
+    //     } else {
+    //       return "error"
+    //     }
+    //   }console.log(text);
+    // }
+loadDB("Clean House");
 
-
+// let emp = new Takenotes("Clean House", "yo yo yo");
+// console.log(emp.text);
 
   // async function loadDB() {
   //   const response = await fetch('/api/notes');
@@ -242,4 +251,4 @@ class Takenotes {
 
 //   }
 // }}
-// const noteLength = document.body.children[1].children[0].children[0].children[0].children[0].children.length;
+// const noteLength = document.body.children[1].children[0].children[0].children[0].children[0].children.length
