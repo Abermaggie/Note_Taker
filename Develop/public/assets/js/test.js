@@ -13,7 +13,7 @@ if (window.location.pathname === '/notes') {
   saveNoteBtn = document.querySelector('.save-note');
   newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
-  clickable = document.querySelectorAll('.list-group-item');
+  clickable = document.getElementsByTagName('button');
 }
 
 // Show an element
@@ -125,17 +125,18 @@ const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
-  }
+  } 
 
   let noteListItems = [];
 
   // Returns HTML element with or without a delete button
   const createLi = (text, delBtn = true) => {
-    const liEl = document.createElement('li');
+    const liEl = document.createElement('button');
     liEl.classList.add('list-group-item');
-
+    liEl.setAttribute("id", "list-group-item");
     const spanEl = document.createElement('span');
     spanEl.classList.add('list-item-title');
+    spanEl.setAttribute("id", 'list-item-title');
     spanEl.innerText = text;
     spanEl.addEventListener('click', handleNoteView);
 
@@ -158,7 +159,7 @@ const renderNoteList = async (notes) => {
     return liEl;
   };
 
-
+  console.log("Clean House")
 
   if (jsonNotes.length === 0) {
     noteListItems.push(createLi('No saved Notes', false));
@@ -183,19 +184,25 @@ if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
-  noteText.addEventListener('keyup', handleRenderSaveBtn);;
+  noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
 
-// clickable.addEventListener('click', handleID)
+
 getAndRenderNotes();
+// const getData = () => getNotes().then(response);
+// getData();
 
-// const handleID = (e) => {
-//   e.preventDefault();
-//   activeNote = JSON.parse(e.target.ownerElement.getAttribute('.innerText'));
-//   renderActiveNote();
+// const handleClick = (newEl) => {
 // }
-// clickable.addEventListener('click', handleID)
+// let getTitle;
+// let getCo;
+// getCo = document.getElementById('list-group-item').date-note;
+// getTitle = document.querySelectorAll('data-note');
+// console.log(getTitle.item());
+// clickable.addEventListener('click', getTitle)
 
+
+// console.log(newEl.innerHTML);
 
 async function loadDB(title) {
       const response = await fetch('/api/notes');
@@ -209,49 +216,6 @@ async function loadDB(title) {
       // noteDash.value = data[i].title;
       // noteWrite.value= data[i].text;
     }}
-loadDB("");
+loadDB("Wash the Dog");
 
 
-
-// let emp = new Takenotes("Clean House", "yo yo yo");
-// console.log(emp.text);
-
-  // async function loadDB() {
-  //   const response = await fetch('/api/notes');
-  //   const data = await response.json();
-  //   let noteArr = data.length;
-  //   for (var i = 0; i< noteArr; i++) {
-  //     if (clickEv === notes[i].title) {
-  //       return {
-  //           const newNoteTitle = noteTitle.replace('',notes[i].title)
-
-  //     } else {
-  //       return "error"
-  //   console.log(data[0].title);
-  // }
-
-  // loadDB();
-
-// const pullByClick = () => {
-//   activenote
-//   new Takenotes(`${noteTitle}`) {
-//   this.title = title;
-// }
-// }
-
-// console.log(activeNote);
-
-// let spanElement;
-// spanElement = document.getElementsByClassName('list-item-title')[1].innerText;
-
-// const noteItem1 = []
-
-// const addArray = () => {
-// if (noteLength != 0) {
-//   if(noteLength-1 > noteItem1.length) {
-//     noteItem1.push(noteItem1[noteItem1.length]+1);
-//   } else {
-
-//   }
-// }}
-// const noteLength = document.body.children[1].children[0].children[0].children[0].children[0].children.length

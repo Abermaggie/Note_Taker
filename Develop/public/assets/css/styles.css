@@ -77,3 +77,6 @@ body {
   cursor: pointer;
 }
 
+button {
+  text-align: left;
+}
