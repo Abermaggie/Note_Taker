@@ -1,3 +1,4 @@
+// Declare variables//
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -7,6 +8,7 @@ let clickable;
 let noteDash = document.getElementById('note-title');
 let noteWrite = document.getElementById('note-textarea');
 
+// When on /notes page of the URL, apply these values to declared variables.//
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
@@ -29,6 +31,7 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
+// Pull current notes via GET method.//
 const getNotes = () =>
   fetch('/api/notes', {
     method: 'GET',
@@ -36,7 +39,7 @@ const getNotes = () =>
       'Content-Type': 'application/json',
     },
   });
-
+// Use POST method to create and save a new note.//
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
@@ -45,7 +48,7 @@ const saveNote = (note) =>
     },
     body: JSON.stringify(note),
   });
-
+// Use DELETE method to remove a note//
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
@@ -68,7 +71,7 @@ const renderActiveNote = () => {
     noteText.value = '';
   }
 };
-
+// Use a constructor function of newNote to input new user notes//
 const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
@@ -84,7 +87,7 @@ const handleNoteSave = () => {
 const handleNoteDelete = (e) => {
   // Prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
-
+// pull note_id//
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).note_id;
   if (activeNote.id === noteId) {
@@ -109,7 +112,7 @@ const handleNewNoteView = (e) => {
   activeNote = {};
   renderActiveNote();
 };
-
+// funtion to show or hide save button.//
 const handleRenderSaveBtn = () => {
   if (!noteTitle.value.trim() || !noteText.value.trim()) {
     hide(saveNoteBtn);
@@ -179,7 +182,7 @@ const renderNoteList = async (notes) => {
 
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
-
+// Event listeners applied when in the notes page//
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
@@ -187,15 +190,19 @@ if (window.location.pathname === '/notes') {
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
 
-
+// Call functions//
 getAndRenderNotes();
-
+// extract the inner text from saved note and apply to loadDB function//
 const handleNoteLoad = (e) => {
   const note = e.target;
   const innerText = note.innerHTML
   loadDB(innerText);
   };
-
+// function written to pull current notes and store
+// them in the data variable in json format 
+// loop through the db.json file until you find a title that matches
+// argument, then pull both title and text and apply it to the current
+// notepad template.//
 async function loadDB(innerText) {
   const response = await fetch('/api/notes');
   const data = await response.json();
