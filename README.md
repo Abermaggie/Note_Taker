@@ -29,19 +29,35 @@ Initial package installs can be accomplished with "npm i". This will download th
 
 
 ## Usage
-Caption 1: Screen shot of repository framework
+Caption 1: Screen shot of repository framework:
+![image](https://user-images.githubusercontent.com/114010430/210913229-eca7a74b-5a8f-4b2e-9f61-6984c1a1e4d0.png)
 
-Caption 2: Screen shot of db.json file before program usage.
 
-Caption 3: Screen shot of db.json file after program usage.
 
-Caption 4: Screen shot of landing page.
+Caption 2: Screen shot of db.json file before program usage.:
+![image](https://user-images.githubusercontent.com/114010430/210913302-e6f07979-5fdc-44d5-b888-b4f5ccadba05.png)
 
-Caption 5: Screen shot of notepad.
 
-Video 1: Program run through of starting server, opening webpage.
+Caption 3: Screen shot of db.json file after program usage.:
+![image](https://user-images.githubusercontent.com/114010430/210914335-8af89fb5-a672-4b5a-8cc3-c93557a7b087.png)
+
+
+Caption 4: Screen shot of landing page.:
+![image](https://user-images.githubusercontent.com/114010430/210913427-25bea231-547d-4a24-a223-61b4a1ead0c5.png)
+
+
+Caption 5: Screen shot of notepad.:
+![image](https://user-images.githubusercontent.com/114010430/210913499-571081cb-79d7-4021-9f84-8034666ff1b1.png)
+
+
+Video 1: Program run through of starting server, opening webpage.:
+https://drive.google.com/file/d/1MbyN60gc6RnmtEDgynR02jZW5WnTkQTk/view
 
 Video 2: Utilization of the note taking application.
+https://drive.google.com/file/d/1y2zqDTXEogCVWBLTq01YGWNOOmjY8Bnf/view
+
+GitHub Repository: https://github.com/Abermaggie/Note_Taker/
+Heroku Deployed Page:
 
 ## Credits
 Individual Collaborators:
