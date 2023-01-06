@@ -1,7 +1,12 @@
 [
     {
-        "title": "Make an Example Title",
-        "text": "Make an example text.",
-        "note_id": "123"
+        "title": "Wash Dishes",
+        "text": "Scrub and rinse.",
+        "note_id": "ac54"
+    },
+    {
+        "title": "Vacuum floors",
+        "text": "Carpet and hardwoods.",
+        "note_id": "d679"
     }
 ]
