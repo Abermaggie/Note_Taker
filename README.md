@@ -56,6 +56,9 @@ https://drive.google.com/file/d/1MbyN60gc6RnmtEDgynR02jZW5WnTkQTk/view
 Video 2: Utilization of the note taking application.
 https://drive.google.com/file/d/1y2zqDTXEogCVWBLTq01YGWNOOmjY8Bnf/view
 
+GitHub Repository: https://github.com/Abermaggie/Note_Taker/
+Heroku Deployed Page:
+
 ## Credits
 Individual Collaborators:
 Individual Collaborators: Maggie Abernathy- www.github.com/Abermaggie
